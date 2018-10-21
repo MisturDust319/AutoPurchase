@@ -1,8 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MyActivity" >
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+    <item android:id="@+id/action_car_cost"
+        android:title="@string/car_cost_label"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+    <item android:id="@+id/action_loan_report"
+        android:title="@string/loan_report_label"
         android:orderInCategory="100"
         android:showAsAction="never" />
 </menu>

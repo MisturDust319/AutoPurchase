@@ -33,4 +33,9 @@
     <string name="report_line11">\n\tBorrowed Amount: $</string>
     <string name="report_line12">\n\tInterest Amount: $</string>
 
+
+    <!-- STAN'S ADDITIONS -->
+    <string name="car_cost_label">Car Cost</string>
+    <string name="loan_report_label">Loan Report</string>
+
 </resources>
