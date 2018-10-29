@@ -1,6 +1,9 @@
 package com.cornez.autopurchase;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -25,6 +28,9 @@ public class PurchaseActivity extends AppCompatActivity {
     private EditText carPriceET;
     private EditText downPayET;
     private RadioGroup loanTermRG;
+    // FRAGMENT OBJECTS
+    private Fragment carCostFragment;
+    private Fragment loanSummaryFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,11 @@ public class PurchaseActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setTitle(null);
+
+        // CREATE AND BIND FRAGMENTS
+        carCostFragment = new PurchaseFragment();
+
+        attachFragment(carCostFragment);
 
         //ESTABLISH REFERENCES TO EDITABLE TEXT FIELDS AND RADIO BUTTON
         carPriceET = (EditText) findViewById(R.id.editText1);
@@ -89,6 +100,14 @@ public class PurchaseActivity extends AppCompatActivity {
         loanReport += res.getString(R.string.report_line4);
         loanReport += res.getString(R.string.report_line5);
 
+    }
+
+    // Attach a Fragment to the Activity
+    private void attachFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
     }
 
     public void activateLoanSummary(View view) {
