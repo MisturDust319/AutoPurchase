@@ -47,8 +47,10 @@
         android:layout_toEndOf="@+id/radioGroup1"
         android:width="90dp"
         android:ems="10"
+        android:hint="0"
         android:inputType="number"
         android:textColor="@color/steel_blue">
+
 
         <requestFocus />
     </EditText>
@@ -83,8 +85,9 @@
         android:layout_below="@+id/textView2"
         android:width="90dp"
         android:ems="10"
+        android:hint="0"
         android:inputType="number"
-        android:textColor="@color/steel_blue"></EditText>
+        android:textColor="@color/steel_blue" />
 
     <!-- LOAN TERM SELECTION  -->
     <RadioGroup
@@ -94,8 +97,8 @@
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
         android:background="@color/steel_blue"
-        android:paddingRight="40dp"
-        android:paddingLeft="20dp">
+        android:paddingLeft="20dp"
+        android:paddingRight="40dp">
 
         <RadioButton
             android:id="@+id/radio0"
