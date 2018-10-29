@@ -1,12 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MyActivity" >
+    tools:context=".MainActivity">
+
     <item android:id="@+id/action_car_cost"
         android:title="@string/car_cost_label"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
+        app:showAsAction="ifRoom" />
     <item android:id="@+id/action_loan_report"
         android:title="@string/loan_report_label"
-        android:orderInCategory="100"
-        android:showAsAction="never" />
+        app:showAsAction="ifRoom"/>
+
 </menu>

@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
 
         <!-- MY ACTIVITY CLASS: USED TO INPUT THE CAR PURCHASE INFORMATION -->
         <activity
