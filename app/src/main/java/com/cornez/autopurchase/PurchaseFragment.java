@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 public class PurchaseFragment extends Fragment {
 
-    private View view;
     // LAYOUT INPUT REFERENCES
     private EditText carPriceET;
     private EditText downPayET;
@@ -29,7 +28,6 @@ public class PurchaseFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -46,6 +44,10 @@ public class PurchaseFragment extends Fragment {
         carPriceET = (EditText) view.findViewById(R.id.editText1);
         downPayET = (EditText) view.findViewById(R.id.editText2);
         loanTermRG = (RadioGroup) view.findViewById(R.id.radioGroup1);
+
+
+        // init program side field values
+        ((PurchaseActivity) getActivity()).initFields();
 
         // set event listeners
         // radio buttons
@@ -85,12 +87,22 @@ public class PurchaseFragment extends Fragment {
     }
 
     public void setCarPrice() {
-        carPrice = ((double) Integer.valueOf(carPriceET.getText().toString()));
+        String valStr = carPriceET.getText().toString();
+        if(valStr.equals("")) {
+            valStr = "0";
+        }
+        carPrice = ((double) Integer.valueOf(valStr));
+
         ((PurchaseActivity) getActivity()).setCarPrice(carPrice);
     }
 
     public void setDownPayment() {
-        downPayment = ((double) Integer.valueOf(downPayET.getText().toString()));
+        String valStr = downPayET.getText().toString();
+        if(valStr.equals("")) {
+            valStr = "0";
+        }
+
+        downPayment = ((double) Integer.valueOf(valStr));
         ((PurchaseActivity) getActivity()).setDownPayment(downPayment);
     }
 

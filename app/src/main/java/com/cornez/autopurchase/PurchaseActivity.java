@@ -55,9 +55,6 @@ public class PurchaseActivity extends AppCompatActivity {
 //        carPriceET = (EditText) findViewById(R.id.editText1);
 //        downPayET = (EditText) findViewById(R.id.editText2);
 //        loanTermRG = (RadioGroup) findViewById(R.id.radioGroup1);
-        carPrice = 0;
-        downPayment = 0;
-        loanTerm = getResources().getString(R.string.years2);
 
         //CREATE AN AUTOMOBILE OBJECT TO STORE AUTO DATA
         mAuto = new Auto();
@@ -65,19 +62,21 @@ public class PurchaseActivity extends AppCompatActivity {
 
     private void collectAutoInputData() {
         // TASK 1: SET THE CAR PRICE
-//        mAuto.setPrice ((double) Integer.valueOf(carPriceET.getText()
+//        mAuto.setPrice ((double) Integer.1valueOf(carPriceET.getText()
 //                .toString()));
-
+        mAuto.setPrice(carPrice);
 
         //TASK 2: SET THE DOWN PAYMENT
 //        mAuto.setDownPayment((double)
 //                Integer.valueOf(downPayET.getText()
 //                        .toString()));
+        mAuto.setDownPayment(downPayment);
 
         //TASK 3 SET THE LOAN TERM
 //        Integer radioId = loanTermRG.getCheckedRadioButtonId();
 //        RadioButton term = (RadioButton) findViewById(radioId);
 //        mAuto.setLoanTerm(term.getText().toString());
+        mAuto.setLoanTerm(loanTerm);
     }
     private void buildLoanReport() {
         // TASK 1: CONSTRUCT THE MONTHLY PAYMENT
@@ -143,6 +142,13 @@ public class PurchaseActivity extends AppCompatActivity {
 
 
         attachFragment(loanSummaryFragment);
+    }
+
+    // this sets the default values for the input fields
+    public void initFields() {
+        carPrice = 0;
+        downPayment = 0;
+        loanTerm = getResources().getString(R.string.years2);
     }
 
     public void setCarPrice(double carPrice) {
